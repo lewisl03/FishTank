@@ -7,7 +7,7 @@
 #include <Arduino.h>
 #include <Arduino_JSON.h>
 #include <time.h>
-
+#include "config.h"
 
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP);
@@ -15,19 +15,12 @@ bool debugBool = false;
 bool isError = false;
 bool flash = true;
 
-const char* ssid = "EE-Hub-Q7Kr";
-const char* password = "lunar-CAN-menu";
-int light = 14;
-
 time_t currentTime;
 time_t sunSet;
 time_t sunRise;
 
-unsigned long timerDelay = 300 * 1000; //every 5 mins
-unsigned long lastTime = 0;
 
-double latitude = 51.441883;
-double longitude = 0.370759;
+unsigned long lastTime = 0;
 
 char apiUrl[100];
 
